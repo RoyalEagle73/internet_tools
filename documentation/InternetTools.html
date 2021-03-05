@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class InternetTools - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">Object
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-get_IP">#get_IP</a>
+    <li ><a href="#method-i-nslookup">#nslookup</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-InternetTools">
+  <h1 id="class-InternetTools" class="class">
+    class InternetTools
+  </h1>
+
+  <section class="description">
+    
+<p><a href="InternetTools.html"><code>InternetTools</code></a> class contains different internet tools.</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-get_IP" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_IP</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>This method returns all the IP addresses related to machine</p>
+
+<h4 id="method-i-get_IP-label-Returns">Returns<span><a href="#method-i-get_IP-label-Returns">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre>[Array] - This method returns a list of IP address as string.</pre>
+
+          <div class="method-source-code" id="get_IP-source">
+            <pre><span class="ruby-comment"># File lib/internet_tools.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_IP</span>
+    <span class="ruby-identifier">ip_list</span> = []
+    <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">ip_address_list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">address</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">ip_list</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">address</span>.<span class="ruby-identifier">ip_address</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">ip_list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-nslookup" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">nslookup</span><span
+            class="method-args">(url, customDNS=&quot;&quot;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>This method returns hash containing dns lookup for a given url.</p>
+
+<h4 id="method-i-nslookup-label-Params-3A">Params:<span><a href="#method-i-nslookup-label-Params-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre>url (string) : URL fir which dns search is required
+customDNS (string) (optional) : Custom DNS, if query needs to be done from custome dns</pre>
+
+<h4 id="method-i-nslookup-label-Returns-3A">Returns:<span><a href="#method-i-nslookup-label-Returns-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre>[Hash] :  A hash containing lookup data is returned. Hash structure is as follows
+    1. First Key is &#39;server&#39; which returns the DNS server which is being contacted.
+    2. Second Key is &#39;address&#39; which returns the DNS server&#39;s physical address.
+    3. A hash containing DNS lookup index number wise.</pre>
+
+          <div class="method-source-code" id="nslookup-source">
+            <pre><span class="ruby-comment"># File lib/internet_tools.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nslookup</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">customDNS</span>=<span class="ruby-string">&quot;&quot;</span>)
+    <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;nslookup #{url} #{customDNS}&quot;</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-identifier">query</span>).<span class="ruby-identifier">read</span>().<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;\t&quot;</span>,<span class="ruby-string">&quot;&quot;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-identifier">output</span> = {}
+    <span class="ruby-identifier">output</span>[<span class="ruby-string">&quot;server&quot;</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;:&quot;</span>)[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">output</span>[<span class="ruby-string">&quot;address&quot;</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;:&quot;</span>)[<span class="ruby-value">1</span>]
+    <span class="ruby-comment"># Finding start of addresses</span>
+    <span class="ruby-identifier">output</span>[<span class="ruby-string">&quot;ip details&quot;</span>] = {}
+    <span class="ruby-identifier">ip_index</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">ind</span> <span class="ruby-keyword">in</span> <span class="ruby-value">2</span><span class="ruby-operator">...</span><span class="ruby-identifier">result</span>.<span class="ruby-identifier">length</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>[<span class="ruby-identifier">ind</span>].<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;Name&quot;</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+            <span class="ruby-identifier">ip_data</span> = {}
+            <span class="ruby-identifier">ip_data</span>[<span class="ruby-string">&quot;name&quot;</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">ind</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;:&quot;</span>)[<span class="ruby-value">1</span>]
+            <span class="ruby-identifier">ip_data</span>[<span class="ruby-string">&quot;address&quot;</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">ind</span><span class="ruby-value">+1</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;:&quot;</span>)[<span class="ruby-value">1</span><span class="ruby-operator">..</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;:&quot;</span>)
+            <span class="ruby-identifier">output</span>[<span class="ruby-string">&quot;ip details&quot;</span>][<span class="ruby-identifier">ip_index</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">ip_data</span>
+            <span class="ruby-identifier">ip_index</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

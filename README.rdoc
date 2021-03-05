@@ -1,0 +1,8 @@
+==== ************* Internet Tools *************
+
+A tool to include internet queries in your ruby projects.
+
+
+==== Features
+- Nslookup
+- Ip addresses

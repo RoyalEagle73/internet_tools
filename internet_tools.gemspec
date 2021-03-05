@@ -2,10 +2,10 @@ Gem::Specification.new do |x|
 
     #Required attributes
     x.name = "internet_tools"
-    x.version = "0.1.0"
+    x.version = "0.1.1"
     x.summary = "A tool for implementing internet tools in ruby projetcs"
     x.authors = ["Deepak Chauhan"]
-    x.files = ['lib/internet_tools.rb','LICENSE','Rakefile','README.rdoc','spec/internet_tools_spec.rb']
+    x.files = ['lib/internet_tools.rb','LICENSE','Rakefile','README.rdoc','spec/internet_tools_spec.rb','changelog-0-1-1.md']
 
 
     # Additional attributes for quality
